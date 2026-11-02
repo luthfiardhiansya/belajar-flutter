@@ -9,6 +9,7 @@ import 'package:lutfi/row_column_widget/layout_widget.dart';
 import 'package:lutfi/row_column_widget/row_column.dart';
 import 'package:lutfi/row_column_widget/row_widget.dart';
 import 'package:lutfi/size_box_stack/ExpandedWidget.dart';
+import 'package:lutfi/size_box_stack/LatihanPakaceDua.dart';
 import 'package:lutfi/size_box_stack/LatihanSizeBox.dart';
 import 'package:lutfi/size_box_stack/LayoutDua.dart';
 import 'package:lutfi/size_box_stack/LayoutEmpat.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
           title: Text("Ayam Jago"),
           backgroundColor: const Color.fromARGB(255, 99, 227, 30),
         ),
-        body: LatihanPertama(),
+        body: Latihansizebox(),
       ),
     );
   }
