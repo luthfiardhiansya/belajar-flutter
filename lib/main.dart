@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:lutfi/latihan_mandiri/latihan_pertama.dart';
+import 'package:lutfi/list_view/latihan_list1.dart';
+import 'package:lutfi/list_view/list_basic.dart';
+import 'package:lutfi/list_view/list_builder2.dart';
+import 'package:lutfi/list_view/list_builder_widget.dart';
+import 'package:lutfi/list_view/list_pakace.dart';
+import 'package:lutfi/list_view/list_separated.dart';
 import 'package:lutfi/row_column_widget/column_widget.dart';
 import 'package:lutfi/container_widget/latihan_container.dart';
 import 'package:lutfi/container_widget/poster_widget.dart';
@@ -34,7 +40,7 @@ class MyApp extends StatelessWidget {
           title: Text("Ayam Jago"),
           backgroundColor: const Color.fromARGB(255, 99, 227, 30),
         ),
-        body: Latihansizebox(),
+        body: LatihanList1(),
       ),
     );
   }
