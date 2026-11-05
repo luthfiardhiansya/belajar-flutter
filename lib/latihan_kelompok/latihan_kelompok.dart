@@ -17,109 +17,114 @@ class LatihanKelompok extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: GridView.builder(
-        padding: EdgeInsets.all(10),
-        itemCount: indonesia.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          childAspectRatio: 0.8
-          ),
-        itemBuilder: (context, index) {
-          final data = indonesia[index];
-      
-          return Center(
-            child: Container(
-              width: 300,
-              height: 300,
-              clipBehavior: Clip.hardEdge,
-              decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 234, 233, 233),
-              boxShadow: [
-              BoxShadow(
-                color: Colors.red.withOpacity(0.4),
-                blurRadius: 1,
-                spreadRadius: 1,
-                offset: Offset(3,2),
+    return Scaffold(
+      appBar: AppBar(),
+        body: Center(
+          child: GridView.builder(
+            padding: EdgeInsets.all(10),
+            itemCount: indonesia.length,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              childAspectRatio: 0.8
               ),
-              ],
-      
-              borderRadius: BorderRadius.circular(10),
-              ),
-              child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-                child: Stack(
-                  children: [
-                    Positioned(child: Container(
-                      width: 300,
-                      height: 200,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(image: NetworkImage(data['gambar']),
-                        fit: BoxFit.cover
-                        )
-                      ),
-                    )),
-                          
-                    Positioned(
-                      left: 10,
-                      top: 210,
-                      child: Text(data['wisata'],
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15
-                    ),)),
-                          
-                    Positioned(
-                      bottom: 30,
-                      left: 10,
-                      child: Text("Harga Tiket: Rp.${data['harga']}",
-                      style: TextStyle(
-                        fontSize: 15
-                      ),)
-                      ),
-                    
-                    Positioned(
-                      top: 15,
-                      right: 10,
-                      child: Container(
-                        padding: EdgeInsets.only(right: 4, left: 4),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.black.withValues(alpha: 0.5)
-                        ),
-                        child: Text("Buka Pukul ${data['jam']}",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 13,
-                          fontStyle: FontStyle.italic
-                        ),),
-                      )),
-                          
-                    Positioned(
-                      bottom: 103,
-                      left: 7,
-                      child: Container(
-                      color: Colors.black.withValues(alpha: 0.5),
-                      child: Text("📍${data['lokasi']}",
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.white
-                      ),),
-                    )),
-      
-                    Positioned(
-                      right: 10,
-                      bottom: 65,
-                      child: Icon(Icons.tour_outlined))
+            itemBuilder: (context, index) {
+              final data = indonesia[index];
+          
+              return Center(
+                child: Container(
+                  width: 300,
+                  height: 300,
+                  clipBehavior: Clip.hardEdge,
+                  decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 234, 233, 233),
+                  boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.4),
+                    blurRadius: 1,
+                    spreadRadius: 1,
+                    offset: Offset(3,2),
+                  ),
                   ],
+          
+                  borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                    child: Stack(
+                      children: [
+                        Positioned(child: Text("ahii")),
+        
+                        Positioned(child: Container(
+                          width: 300,
+                          height: 200,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(image: NetworkImage(data['gambar']),
+                            fit: BoxFit.cover
+                            )
+                          ),
+                        )),
+                              
+                        Positioned(
+                          left: 10,
+                          top: 210,
+                          child: Text(data['wisata'],
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15
+                        ),)),
+                              
+                        Positioned(
+                          bottom: 30,
+                          left: 10,
+                          child: Text("Harga Tiket: Rp.${data['harga']}",
+                          style: TextStyle(
+                            fontSize: 15
+                          ),)
+                          ),
+                        
+                        Positioned(
+                          top: 15,
+                          right: 10,
+                          child: Container(
+                            padding: EdgeInsets.only(right: 4, left: 4),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.black.withValues(alpha: 0.5)
+                            ),
+                            child: Text("Buka Pukul ${data['jam']}",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                              fontStyle: FontStyle.italic
+                            ),),
+                          )),
+                              
+                        Positioned(
+                          bottom: 103,
+                          left: 7,
+                          child: Container(
+                          color: Colors.black.withValues(alpha: 0.5),
+                          child: Text("📍${data['lokasi']}",
+                          style: TextStyle(
+                            fontSize: 10,
+                            color: Colors.white
+                          ),),
+                        )),
+          
+                        Positioned(
+                          right: 13,
+                          bottom: 60,
+                          child: Icon(Icons.tour_outlined))
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          );
-        }
-      ),
+              );
+            }
+          ),
+        ),
     );
   }
 }

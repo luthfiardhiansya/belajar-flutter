@@ -8,6 +8,7 @@ import 'package:lutfi/list_view/list_basic.dart';
 import 'package:lutfi/list_view/list_builder2.dart';
 import 'package:lutfi/list_view/list_builder_widget.dart';
 import 'package:lutfi/list_view/list_separated.dart';
+import 'package:lutfi/navigation/contoh.dart';
 import 'package:lutfi/row_column_widget/column_widget.dart';
 import 'package:lutfi/container_widget/latihan_container.dart';
 import 'package:lutfi/container_widget/poster_widget.dart';
@@ -36,18 +37,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Ayam Jago",
-          style: TextStyle(
-            fontStyle: FontStyle.italic,
-            fontWeight: FontWeight.bold
-          ),),
-          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        ),
-        body: LatihanKelompok(),
-      ),
+
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Contoh(),
+        '/latihan_kelompok': (context) => LatihanKelompok(),
+        '/latihan_mandiri':(context) => LatihanPertama(),
+        '/list_view':(context) => LatihanList1(),
+        '/container_widget':(context) => PosterContainer(),
+        '/row_column_widget':(context) => LatihanPakace(),
+        '/size_box_stack':(context) => LatihanPakaceDua(),
+      },
+
+      // debugShowCheckedModeBanner: false,
+      // home: Scaffold(
+      //   appBar: AppBar(
+      //     title: Text("Ayam Jago",
+      //     style: TextStyle(
+      //       fontStyle: FontStyle.italic,
+      //       fontWeight: FontWeight.bold
+      //     ),),
+      //     backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      //   ),
+      //   body: Contoh(),
+      // ),
     );
   }
 }
