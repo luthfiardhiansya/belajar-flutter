@@ -11,20 +11,19 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:lutfi/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('menu utama tampil dan halaman about dapat dibuka', (
+    WidgetTester tester,
+  ) async {
     await tester.pumpWidget(const MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.text('Widget Laboratory'), findsOneWidget);
+    expect(find.text('Latihan Kelompok'), findsOneWidget);
+    expect(find.text('SizedBox & Stack'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    await tester.tap(find.byIcon(Icons.arrow_forward_rounded));
+    await tester.pumpAndSettle();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Halaman About'), findsOneWidget);
+    expect(find.text('Nama Lengkap: Ambatukam'), findsOneWidget);
   });
 }

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class ListSeparated extends StatelessWidget {
   ListSeparated({super.key});
 
-  var partai = ["Golongan Karya", "PDI", "PKB", "Wa Ijo"];
-  var partaiColour = [Colors.amber,Colors.red,Colors.blue,Colors.green];
+  final partai = ["Golongan Karya", "PDI", "PKB", "Wa Ijo"];
+  final partaiColour = [Colors.amber, Colors.red, Colors.blue, Colors.green];
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
@@ -14,7 +14,7 @@ class ListSeparated extends StatelessWidget {
           height: 400,
           width: 400,
           color: partaiColour[index],
-          child: Center(child: Text(partai[index].toString()),),
+          child: Center(child: Text(partai[index].toString())),
         );
       },
       separatorBuilder: (context, index) {
@@ -26,7 +26,7 @@ class ListSeparated extends StatelessWidget {
           endIndent: 50,
           thickness: 2,
         );
-      }
+      },
     );
   }
 }

@@ -4,35 +4,30 @@ class AboutPage extends StatelessWidget {
   final String nama, kelas;
   final int umur;
 
-  AboutPage({
+  const AboutPage({
     super.key,
     required this.nama,
     required this.kelas,
-    required this.umur
+    required this.umur,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text('About')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Halaman About"),
-            Text("Nama Lengkap: ${nama}"),
-            Text("Kelas: ${kelas}"),
-            Text("Umur: ${umur}"),
-            
-            GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Container(
-                color: Colors.blue,
-                child: Text("Kembali"),
-              ),
-            )
+            const Text("Halaman About"),
+            Text("Nama Lengkap: $nama"),
+            Text("Kelas: $kelas"),
+            Text("Umur: $umur"),
+
+            ElevatedButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text("Kembali"),
+            ),
           ],
         ),
       ),
