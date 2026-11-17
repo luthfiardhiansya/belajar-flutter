@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:lutfi/pages/form_output_page.dart';
 
 class FormEkskul extends StatefulWidget {
@@ -12,9 +13,16 @@ class _FormEkskulState extends State<FormEkskul> {
   final _formKey = GlobalKey<FormState>();
   final _namaC = TextEditingController();
   final _emailC = TextEditingController();
+  final tglDaftarC = TextEditingController();
   String? _ekskul;
   String _gender = 'Laki-laki';
   bool _setuju = false;
+
+  @override
+  void initState() {
+    tglDaftarC.text = '';
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -39,6 +47,7 @@ class _FormEkskulState extends State<FormEkskul> {
             email: _emailC.text,
             ekskul: _ekskul!,
             gender: _gender,
+            tglDaftarC: tglDaftarC.text
           ),
         ),
       );
@@ -81,6 +90,36 @@ class _FormEkskulState extends State<FormEkskul> {
                   return null;
                 },
               ),
+              
+              const SizedBox(height: 18),
+              TextFormField(
+                controller: tglDaftarC,
+                decoration: InputDecoration(
+                  hintText: "Tanggal Daftar",
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  if (value!.isEmpty) return 'Input Tanggal Lahir';
+                  return null;
+                },
+                readOnly: true,
+                onTap: () async {
+                  DateTime? pickedDate = await showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(1900),
+                    lastDate: DateTime(2100)
+                    );
+                    if (pickedDate != null) {
+                      setState(() {
+                        tglDaftarC.text = DateFormat (
+                          'yyyy-MM-dd',
+                        ).format(pickedDate);
+                      });
+                    }
+                },
+              ),
+
               const SizedBox(height: 16),
               DropdownButtonFormField<String>(
                 value: _ekskul,

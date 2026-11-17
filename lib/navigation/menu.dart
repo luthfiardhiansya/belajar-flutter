@@ -109,8 +109,8 @@ class Menu extends StatelessWidget {
 
               _buildNavCard(
                 number: '07',
-                title: 'Formulir',
-                subtitle: 'Form formulir.',
+                title: 'Pengaduan',
+                subtitle: 'Form pengaduan fasilitas.',
                 icon: Icons.mail,
                 onTap: () => Navigator.pushNamed(
                   context,

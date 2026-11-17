@@ -8,6 +8,7 @@ import 'package:lutfi/latihan_mandiri/latihan_pertama.dart';
 import 'package:lutfi/list_view/latihan_list1.dart';
 import 'package:lutfi/navigation/menu.dart';
 import 'package:lutfi/pages/form_input_page.dart';
+import 'package:lutfi/pages/form_input_pengaduan.dart';
 import 'package:lutfi/row_column_widget/row_column.dart';
 import 'package:lutfi/size_box_stack/LatihanPakaceDua.dart';
 
@@ -35,6 +36,6 @@ class AppRoute {
     containerWidget: (context) => const LatihanContainer(),
     rowColumnWidget: (context) => const RowColumnWidget(),
     sizeBoxStack: (context) => LatihanPakaceDua(),
-    formulir: (context) => const FormEkskul(),
+    formulir: (context) => const Pengaduan(),
   };
 }
