@@ -7,6 +7,7 @@ import 'package:lutfi/latihan_kelompok/latihan_kelompok.dart';
 import 'package:lutfi/latihan_mandiri/latihan_pertama.dart';
 import 'package:lutfi/list_view/latihan_list1.dart';
 import 'package:lutfi/navigation/menu.dart';
+import 'package:lutfi/pages/album_page.dart';
 import 'package:lutfi/pages/form_input_page.dart';
 import 'package:lutfi/pages/form_input_pengaduan.dart';
 import 'package:lutfi/row_column_widget/row_column.dart';
@@ -24,6 +25,7 @@ class AppRoute {
   static const rowColumnWidget = '/row_column_widget';
   static const sizeBoxStack = '/size_box_stack';
   static const formulir = '/pages';
+  static const album = '/pages';
 
   static final Map<String, WidgetBuilder> routes = {
     menu: (context) => const Menu(),
@@ -37,5 +39,6 @@ class AppRoute {
     rowColumnWidget: (context) => const RowColumnWidget(),
     sizeBoxStack: (context) => LatihanPakaceDua(),
     formulir: (context) => const Pengaduan(),
+    album:(context) => const AlbumPage(),
   };
 }

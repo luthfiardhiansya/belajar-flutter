@@ -56,7 +56,7 @@ class Menu extends StatelessWidget {
                 number: '02',
                 title: 'Latihan Mandiri',
                 subtitle: 'Praktik komponen dan logika.',
-                icon: Icons.terminal_rounded,
+                icon: Icons.person_2_outlined,
                 onTap: () => Navigator.pushNamed(
                   context,
                   '/latihan_mandiri',
@@ -67,7 +67,7 @@ class Menu extends StatelessWidget {
                 number: '03',
                 title: 'List View',
                 subtitle: 'Mengenal daftar dan scrolling.',
-                icon: Icons.view_list_rounded,
+                icon: Icons.format_list_bulleted,
                 onTap: () => Navigator.pushNamed(
                   context,
                   '/list_view',
@@ -111,7 +111,18 @@ class Menu extends StatelessWidget {
                 number: '07',
                 title: 'Pengaduan',
                 subtitle: 'Form pengaduan fasilitas.',
-                icon: Icons.mail,
+                icon: Icons.mail_outline,
+                onTap: () => Navigator.pushNamed(
+                  context,
+                  '/pages',
+                ),
+              ),
+
+              _buildNavCard(
+                number: '08',
+                title: 'Album',
+                subtitle: 'My Album.',
+                icon: Icons.photo_album_outlined,
                 onTap: () => Navigator.pushNamed(
                   context,
                   '/pages',
